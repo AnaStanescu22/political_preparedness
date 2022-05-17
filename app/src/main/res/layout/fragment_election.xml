@@ -29,6 +29,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginHorizontal="8dp"
             android:id="@+id/recycler_upcoming"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -56,6 +57,7 @@
             app:layout_constraintTop_toBottomOf="@id/recycler_upcoming" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginHorizontal="8dp"
             android:id="@+id/recycler_saved"
             android:layout_width="0dp"
             android:layout_height="0dp"

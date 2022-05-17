@@ -6,7 +6,13 @@
     <string name="find_my_representatives">FIND MY REPRESENTATIVES</string>
     <string name="header_upcoming_elections">Upcoming Elections</string>
     <string name="head_saved_elections">Saved Elections</string>
-
-    <!-- TODO: Add necessary string values -->
+    <string name="header_representative_search">Representative Search</string>
+    <string name="edit_address_line_1">Address line 1 </string>
+    <string name="edit_address_line_2">Address line 2 </string>
+    <string name="edit_city">City </string>
+    <string name="edit_zip">Zip </string>
+    <string name="find_my_representatives_btn">FIND MY REPRESENTATIVES</string>
+    <string name="use_my_location_btn">USE MY LOCATION</string>
+    <string name="my_representatives">My Representatives</string>
 
 </resources>
