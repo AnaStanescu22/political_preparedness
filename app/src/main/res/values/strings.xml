@@ -14,5 +14,11 @@
     <string name="find_my_representatives_btn">FIND MY REPRESENTATIVES</string>
     <string name="use_my_location_btn">USE MY LOCATION</string>
     <string name="my_representatives">My Representatives</string>
+    <string name="election_information">Election Information</string>
+    <string name="voting_locations">Voting Locations</string>
+    <string name="correspondence_address">Correspondence Address</string>
+    <string name="default_address">Address</string>
+    <string name="follow_election">Follow Election</string>
+    <string name="ballot_information">Ballot Information</string>
 
 </resources>
