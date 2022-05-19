@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/layout/fragment_launch.xml" value="0.15489130434782608" />
         <entry key="app/src/main/res/layout/fragment_representative.xml" value="0.18712921142578126" />
         <entry key="app/src/main/res/layout/fragment_voter_info.xml" value="0.21422101449275363" />
+        <entry key="app/src/main/res/layout/item_election.xml" value="0.23645833333333333" />
       </map>
     </option>
   </component>
