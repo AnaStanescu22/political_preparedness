@@ -20,5 +20,9 @@
     <string name="default_address">Address</string>
     <string name="follow_election">Follow Election</string>
     <string name="ballot_information">Ballot Information</string>
+    <string name="website">Website</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="avatar">Avatar</string>
 
 </resources>
