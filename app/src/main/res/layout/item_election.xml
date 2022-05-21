@@ -9,20 +9,25 @@
             name="election"
             type="com.example.android.politicalpreparedness.network.models.Election" />
 
+        <variable
+            name="clickListener"
+            type="com.example.android.politicalpreparedness.election.adapter.ElectionListAdapter.ElectionListener" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp">
+        android:layout_margin="4dp"
+        android:onClick="@{() -> clickListener.onClick(election)}">
 
         <TextView
             android:id="@+id/tv_election_name"
-            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:text="@{election.name}"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Election Name" />
@@ -33,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:layout_marginBottom="12dp"
-            android:text="@{election.electionDay.toString()}"
+            app:day="@{election.electionDay}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_election_name"
             tools:text="Tue Feb 02 00:00:00 EDT 2021" />

@@ -20,20 +20,20 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="4dp"
+            android:contentDescription="@string/avatar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:profileImage="@{representative.official.photoUrl}"
-            android:contentDescription="@string/avatar" />
+            app:profileImage="@{representative.official.photoUrl}" />
 
         <TextView
             android:id="@+id/text_office_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textStyle="bold"
             android:layout_marginHorizontal="4dp"
             android:text="@{representative.office.name}"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image_avatar"
             app:layout_constraintTop_toTopOf="parent"
@@ -67,33 +67,33 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginEnd="4dp"
+            android:contentDescription="@string/website"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/image_facebook_icon"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_www"
-            android:contentDescription="@string/website" />
+            app:srcCompat="@drawable/ic_www" />
 
         <ImageView
             android:id="@+id/image_facebook_icon"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginEnd="4dp"
+            android:contentDescription="@string/facebook"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/image_twitter_icon"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_facebook"
-            android:contentDescription="@string/facebook" />
+            app:srcCompat="@drawable/ic_facebook" />
 
         <ImageView
             android:id="@+id/image_twitter_icon"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginEnd="4dp"
+            android:contentDescription="@string/twitter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_twitter"
-            android:contentDescription="@string/twitter" />
+            app:srcCompat="@drawable/ic_twitter" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

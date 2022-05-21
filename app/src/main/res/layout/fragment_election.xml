@@ -29,10 +29,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginHorizontal="8dp"
             android:id="@+id/recycler_upcoming"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginHorizontal="8dp"
             android:layout_marginTop="20dp"
             android:clipToPadding="false"
             android:orientation="vertical"
@@ -42,7 +42,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/header_upcoming_election" />
+            app:layout_constraintTop_toBottomOf="@id/header_upcoming_election"
+            app:listData="@{electionsViewModel.upcomingElections}" />
+
+        <ImageView
+            android:id="@+id/image_upcoming_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:civicsApiStatus="@{electionsViewModel.apiStatus}"
+            app:layout_constraintBottom_toBottomOf="@id/recycler_upcoming"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/recycler_upcoming" />
 
         <TextView
             android:id="@+id/header_saved_election"
@@ -57,10 +68,10 @@
             app:layout_constraintTop_toBottomOf="@id/recycler_upcoming" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginHorizontal="8dp"
             android:id="@+id/recycler_saved"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginHorizontal="8dp"
             android:layout_marginTop="20dp"
             android:clipToPadding="false"
             android:orientation="vertical"
@@ -69,12 +80,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/header_saved_election" />
+            app:layout_constraintTop_toBottomOf="@id/header_saved_election"
+            app:listData="@{electionsViewModel.savedElections}" />
 
         <ProgressBar
             android:id="@+id/progress_saved_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="@{electionsViewModel.isDbLoading() ? View.VISIBLE : View.GONE }"
             app:layout_constraintBottom_toBottomOf="@id/recycler_saved"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

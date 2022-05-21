@@ -24,5 +24,8 @@
     <string name="facebook">Facebook</string>
     <string name="twitter">Twitter</string>
     <string name="avatar">Avatar</string>
+    <string name="unfollow_btn">unfollow election</string>
+    <string name="follow_btn">follow election</string>
+
 
 </resources>
