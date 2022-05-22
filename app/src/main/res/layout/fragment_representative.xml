@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:motion="http://schemas.android.com/tools">
 
     <data>
@@ -34,6 +35,7 @@
             android:autofillHints=""
             android:hint="@string/edit_address_line_1"
             android:inputType="textPostalAddress"
+            android:text="@={representativeViewModel.address.line1}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_title" />
 
@@ -45,6 +47,7 @@
             android:autofillHints=""
             android:hint="@string/edit_address_line_2"
             android:inputType="textPostalAddress"
+            android:text="@={representativeViewModel.address.line2}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/address_line_1" />
 
@@ -56,6 +59,7 @@
             android:autofillHints=""
             android:hint="@string/edit_city"
             android:inputType="textPostalAddress"
+            android:text="@={representativeViewModel.address.city}"
             app:layout_constraintEnd_toStartOf="@id/state"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/address_line_2" />
@@ -68,6 +72,7 @@
             android:autofillHints=""
             android:entries="@array/states"
             android:inputType="textPostalAddress"
+            app:stateValue="@={representativeViewModel.address.state}"
             app:layout_constraintBottom_toBottomOf="@id/city"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/city"
@@ -82,6 +87,7 @@
             android:hint="@string/edit_zip"
             android:inputType="number"
             android:maxLength="5"
+            android:text="@={representativeViewModel.address.zip}"
             app:layout_constraintEnd_toEndOf="@id/city"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/city" />
@@ -129,16 +135,19 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/representative_title" />
+            app:layout_constraintTop_toBottomOf="@+id/representative_title"
+            app:representativeList="@{representativeViewModel.representatives}"/>
 
-        <ProgressBar
-            android:id="@+id/progressBar"
+        <TextView
+            android:id="@+id/api_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:apiStatus="@{representativeViewModel.apiStatus}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/representative_title" />
+            app:layout_constraintTop_toBottomOf="@id/representative_title"
+            tools:visibility="visible" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 </layout>

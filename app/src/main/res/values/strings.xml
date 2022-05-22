@@ -26,6 +26,8 @@
     <string name="avatar">Avatar</string>
     <string name="unfollow_btn">unfollow election</string>
     <string name="follow_btn">follow election</string>
-
+    <string name="status_loading">Loading…</string>
+    <string name="status_error">Error when retrieving representatives</string>
+    <string name="error_require_location_permission">To get representatives by using location, you need to enable location permission</string>
 
 </resources>
