@@ -1,9 +1,6 @@
 package com.example.android.politicalpreparedness.representative
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.android.politicalpreparedness.network.CivicsApi
 import com.example.android.politicalpreparedness.network.models.Address
 import com.example.android.politicalpreparedness.representative.model.Representative
@@ -11,7 +8,7 @@ import com.example.android.politicalpreparedness.utils.CivicsApiStatus
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-class RepresentativeViewModel : ViewModel() {
+class RepresentativeViewModel(private val savedHandle: SavedStateHandle) : ViewModel() {
 
     val apiService = CivicsApi.retrofitService
 
@@ -29,6 +26,10 @@ class RepresentativeViewModel : ViewModel() {
 
     init {
         _address.value = Address("", null, "", "", "")
+        val list: List<Representative>? = savedHandle["representatives"]
+        if (list != null) {
+            _representatives.value = list
+        }
     }
 
     fun getRepresentativesList(address: Address?) {
@@ -42,10 +43,12 @@ class RepresentativeViewModel : ViewModel() {
                     val (offices, officials) = apiService.getRepresentatives(_address.value?.toFormattedString()!!)
                     _representatives.value =
                         offices.flatMap { office -> office.getRepresentatives(officials) }
+                    savedHandle.set("representatives", _representatives.value)
                     _apiStatus.value = CivicsApiStatus.DONE
                 } catch (e: Exception) {
                     Timber.e(
-                        "Error: %s", e.localizedMessage)
+                        "Error: %s", e.localizedMessage
+                    )
                     _apiStatus.value = CivicsApiStatus.ERROR
                 }
             }

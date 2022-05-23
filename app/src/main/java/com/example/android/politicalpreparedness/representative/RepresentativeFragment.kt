@@ -29,6 +29,11 @@ class DetailFragment : Fragment() {
 
     lateinit var binding: FragmentRepresentativeBinding
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("motion_layout_state", binding.motionLayout.currentState)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -39,6 +44,12 @@ class DetailFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.representativeViewModel = viewModel
         binding.rvRepresentatives.adapter = RepresentativeListAdapter()
+
+        savedInstanceState?.let {
+            it.getInt("motion_layout_state").let { restoredState ->
+                binding.motionLayout.transitionToState(restoredState)
+            }
+        }
 
         binding.buttonSearch.setOnClickListener {
             hideKeyboard()

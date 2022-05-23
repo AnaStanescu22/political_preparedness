@@ -2,44 +2,25 @@
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ConstraintSet android:id="@+id/start" />
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@id/header" />
+    </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
         <Constraint
-            android:id="@+id/search_title"
-            android:visibility="gone" />
-        <Constraint
-            android:id="@+id/address_line_1"
-            android:visibility="gone" />
-        <Constraint
-            android:id="@+id/address_line_2"
-            android:visibility="gone" />
-        <Constraint
-            android:id="@+id/city"
-            android:visibility="gone" />
-        <Constraint
-            android:id="@+id/state"
-            android:visibility="gone" />
-        <Constraint
-            android:id="@+id/zip"
-            android:visibility="gone" />
-        <Constraint
-            android:id="@+id/button_search"
-            android:visibility="gone" />
-        <Constraint
-            android:id="@+id/button_location"
-            android:visibility="gone" />
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </ConstraintSet>
 
     <Transition
         app:constraintSetEnd="@id/end"
-        app:constraintSetStart="@+id/start"
-        app:motionInterpolator="linear">
-
+        app:constraintSetStart="@+id/start">
         <OnSwipe
             app:dragDirection="dragUp"
-            app:touchAnchorId="@id/rv_representatives"
+            app:touchAnchorId="@+id/my_representatives"
             app:touchAnchorSide="top" />
-
     </Transition>
 </MotionScene>
