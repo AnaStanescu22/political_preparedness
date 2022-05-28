@@ -11,7 +11,7 @@
 
         <variable
             name="voterInfoViewModel"
-            type="com.example.android.politicalpreparedness.election.VoterInfoViewModel" />
+            type="com.example.android.politicalpreparedness.voter_info.VoterInfoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
