@@ -1,4 +1,4 @@
-package com.example.android.politicalpreparedness.election
+package com.example.android.politicalpreparedness.voter_info
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
